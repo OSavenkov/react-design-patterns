@@ -11,8 +11,8 @@ const logAdd = log(add);
 
 console.log(logAdd(1, 2));
 
-var f = function(y) {
-    return function(x) {
+var f = function (y) {
+    return function (x) {
         return x + y;
     }
 }

@@ -3,8 +3,8 @@ import React from 'react';
 
 var Button = React.createClass({
   propTypes: {
-    text: React.PropTypes.string,
-    id: React.PropTypes.number
+    text: React.PropTypes.string.isRequired,
+    id: React.PropTypes.number.isRequired
   },
   getDefaultProps() {
     return {id: -1, text: "default-button-text"}

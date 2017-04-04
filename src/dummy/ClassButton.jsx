@@ -7,21 +7,25 @@ class ClassButton extends Component {
     this.state = {
       data: "class-button"
     }
-    this.onClick = this.onClick.bind(this);
+    this.onClick = this
+      .onClick
+      .bind(this);
   }
   onClick() {
     console.log(this.state.data);
   }
   render() {
     return <div className="button-place">
-      <button id={this.props.id} data={this.state.data} onClick={this.onClick}>{this.props.text}</button>
+      <button id={this.props.item.id} data={this.state.data} onClick={this.onClick}>{this.props.item.text}</button>
     </div>
   }
 }
 
 ClassButton.propTypes = {
-  id: React.PropTypes.number,
-  text: React.PropTypes.string
+  item: React.PropTypes.shape({
+    id: React.PropTypes.number.isRequired, 
+    text: React.PropTypes.string.isRequired
+  }).isRequired
 };
 
 ClassButton.defaultProps = {
