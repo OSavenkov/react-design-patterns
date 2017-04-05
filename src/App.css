@@ -27,6 +27,6 @@
   padding: 10px 20px;
 }
 
-.post-list {
+.post-list, .gist-list {
   text-align: initial;
 }
