@@ -1,15 +1,19 @@
 /* eslint-env browser */
 import React from 'react';
 
-const FunctionalButton = ({text}) => {
+const FunctionalButton = ({id, text, children}) => {
     let onClick = function(e) {
         console.log("functional-button " + e);
     }
-    return <div className="button-place"><button onClick={onClick}>{text}</button></div> 
+    return <div className="button-place">
+      <button id={id} onClick={onClick}>{children}<p>{text}</p></button>
+    </div> 
 }
 
 FunctionalButton.propTypes = {
-    text: React.PropTypes.string
+    id: React.PropTypes.number,
+    text: React.PropTypes.string,
+    children: React.PropTypes.object
 }
 
 export default FunctionalButton

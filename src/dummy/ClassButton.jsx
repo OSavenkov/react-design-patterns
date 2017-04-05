@@ -7,16 +7,14 @@ class ClassButton extends Component {
     this.state = {
       data: "class-button"
     }
-    this.onClick = this
-      .onClick
-      .bind(this);
+    this.onClick = this.onClick.bind(this);
   }
   onClick() {
     console.log(this.state.data);
   }
   render() {
     return <div className="button-place">
-      <button id={this.props.item.id} data={this.state.data} onClick={this.onClick}>{this.props.item.text}</button>
+      <button id={this.props.item.id} data={this.state.data} onClick={this.onClick}>{this.props.children}<p>{this.props.item.text}</p></button>
     </div>
   }
 }
@@ -25,7 +23,8 @@ ClassButton.propTypes = {
   item: React.PropTypes.shape({
     id: React.PropTypes.number.isRequired, 
     text: React.PropTypes.string.isRequired
-  }).isRequired
+  }).isRequired,
+  children: React.PropTypes.object
 };
 
 ClassButton.defaultProps = {

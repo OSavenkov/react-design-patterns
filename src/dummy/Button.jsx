@@ -3,8 +3,10 @@ import React from 'react';
 
 var Button = React.createClass({
   propTypes: {
+    attributes: React.PropTypes.object,
     text: React.PropTypes.string.isRequired,
-    id: React.PropTypes.number.isRequired
+    children: React.PropTypes.node,
+    className: React.PropTypes.string
   },
   getDefaultProps() {
     return {id: -1, text: "default-button-text"}
@@ -16,8 +18,8 @@ var Button = React.createClass({
     console.log(this.state.data);
   },
   render() {
-    return <div className="button-place">
-      <button id={this.props.id} data={this.state.data} onClick={this.onClick}>{this.props.text}</button>
+    return <div className={this.props.className}>
+      <button {...this.props.attributes} onClick={this.onClick}>{this.props.children}<p>{this.props.text}</p></button>
     </div>
   }
 });

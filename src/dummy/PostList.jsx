@@ -15,6 +15,15 @@ export default class PostList extends Component {
         });
     }
     render() {
-        return <ul className="post-list">{this.state.posts.map(post => <li key={post.id}>{post.title}</li>)}</ul>
+    return <ul className="post-list">
+      { this.state
+            .posts
+            .map(post => 
+              <li key={post.id}>
+                <h1>{post.title}</h1>
+                {post.excerpt && <p>{post.excerpt}</p>}
+              </li>)
+      }
+    </ul>
     }
 }
