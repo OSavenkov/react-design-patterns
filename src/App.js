@@ -1,8 +1,12 @@
 /* eslint-env browser */
 import React, {Component} from 'react';
-import logo from './logo.svg';
+// import logo from './logo.svg';
 import './App.css';
-import Gists from './dummy/Gists/Gists';
+
+import List from './dummy/Gists/List';
+import WithFetchedData from './dummy/Gists/WithFetchedData';
+
+// import Gists from './dummy/Gists/Gists';
 // import Counter from './dummy/Counter/Counter';
 // import Button from './dummy/Button.jsx';
 // import ClassButton from './dummy/ClassButton.jsx';
@@ -17,23 +21,27 @@ import Gists from './dummy/Gists/Gists';
 //   children: React.PropTypes.func.isRequired
 // };
 
+const withGists = WithFetchedData(props => `https://api.github.com/users/${props.username}/gists`)
+const ListWithGists = withGists(List)
+
 export default class App extends Component {
-  get initialProperties() {
-    return {
-      attributes: {
-        id: 1
-      },
-      text: "push"
-    }
-  }
+  // get initialProperties() {
+  //   return {
+  //     attributes: {
+  //       id: 1
+  //     },
+  //     text: "push"
+  //   }
+  // }
   render() {
     return (
       <div className="App">
         <div className="App-header">
-          <img src={logo} className="App-logo" alt="logo"/>
+          {/*<img src={logo} className="App-logo" alt="logo"/>*/}
           <h2>Welcome to React</h2>
         </div>
-        <Gists/>
+        <ListWithGists username="gaearon" keyName="id" valueName="description"/>
+        {/*<Gists/>*/}
         {/*<Counter></Counter>*/}
         {/*<FunctionAsChildButton name="Oleg">
           { name => <button>Magic {name}</button> }

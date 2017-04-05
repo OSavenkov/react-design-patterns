@@ -12,15 +12,16 @@ class Gists extends React.Component {
     componentDidMount() {
         fetch('https://api.github.com/users/gaearon/gists')
             .then(response => response.json())
-            .then(gists => this.setState({gists: gists.map(gist => { 
-              return {  id: gist.id, 
-                description: gist.description}
-            })}))
+            .then(gists => this.setState({gists: gists
+                .filter(gist => gist.description !== "")
+                .map(gist => {
+                    return {id: gist.id, description: gist.description}
+                })}))
     }
     render() { 
         console.log(this.state.gists);
         return <ul className="gist-list">
-          {this.state.gists.filter(gist => gist.description !== "").map(gist => <li key={gist.id}>{gist.description}</li>)}
+          {this.state.gists.map(gist => <li key={gist.id}>{gist.description}</li>)}
         </ul>
     }
 }
