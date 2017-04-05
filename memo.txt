@@ -1,0 +1,43 @@
+p.152
+==================================================
+ES6/ES2015 spread operator …array
+
+React CLI: npm install -g create-react-app
+npm start
+npm run build 
+
+Conditionals p.55 render-if/only-if
+Control statements
+React.PropTypes!!
+contextTypes!
+
+Babel - transpiler
+ESLint
+Airbnb
+
+First-class objects
+High-order Functions (HoF)
+Purity
+Immutability
+Currying - closure
+Composition
+
+Components via:
+React.createClass()
+extends Component 
+Stateless Functional Component
+
+Setting state causes re-render!
+
+git remote add origin url
+commit
+push to..
+
+Container and Presentational pattern
+Higher-order Components
+Recompose
+Function as Child
+
+Unidirectional Data Flow
+Child-parent communication
+Fetch!
