@@ -2,10 +2,11 @@
 import "whatwg-fetch";
 import React from "react";
 
-const List = ({data: gists, keyName, valueName}) => 
-  <ul className="generic-list">
-    {gists.map(gist => <li key={gist[keyName]}>{gist[valueName]}</li>)}
+const List = ({data: gists, keyName: key, valueName: value}) => {
+  return <ul className="generic-list">
+    {gists.map(gist => <li key={gist[key]}>{gist[value]}</li>)}
   </ul>
+}
 
 List.propTypes = {
     keyName: React.PropTypes.string.isRequired,

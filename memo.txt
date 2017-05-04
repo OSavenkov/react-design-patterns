@@ -41,3 +41,7 @@ Function as Child
 Unidirectional Data Flow
 Child-parent communication
 Fetch!
+
+Destructuring!
+https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide
+npm -g VS -s
